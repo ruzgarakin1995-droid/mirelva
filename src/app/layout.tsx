@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Zehra Organizasyon | Lüks Etkinlik ve Düğün Planlama",
-  description: "Zehra Organizasyon ile hayallerinizdeki düğünleri, kurumsal etkinlikleri ve özel kutlamaları tasarlayın. Ultra-premium lüks deneyim.",
+  title: "Mirelva",
+  description: "Mirelva Web Platform",
   icons: {
     icon: '/favicon.svg',
   }
