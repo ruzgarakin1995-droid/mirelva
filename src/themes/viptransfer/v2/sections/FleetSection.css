@@ -1,0 +1,63 @@
+.fleet-section {
+  /* background can be slightly different if needed */
+}
+
+.fleet-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 3rem;
+  margin-top: 4rem;
+}
+
+.fleet-card {
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.fleet-image-container {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+}
+
+.fleet-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.fleet-card:hover .fleet-img {
+  transform: scale(1.05);
+}
+
+.fleet-details {
+  padding: 2rem;
+}
+
+.fleet-name {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.fleet-type {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+}
+
+.fleet-specs {
+  display: flex;
+  gap: 1rem;
+  color: #a0a0a0;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .fleet-grid {
+    grid-template-columns: 1fr;
+  }
+}

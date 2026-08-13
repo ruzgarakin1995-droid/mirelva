@@ -1,0 +1,54 @@
+.flight-section {
+  padding: 4rem 2rem;
+}
+
+.flight-container {
+  display: flex;
+  padding: 4rem;
+  background: linear-gradient(135deg, rgba(20,20,20,0.9), rgba(10,10,10,0.9)), url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&q=80&w=2074');
+  background-size: cover;
+  background-position: center;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.flight-content {
+  max-width: 600px;
+}
+
+.flight-icon {
+  margin-bottom: 1.5rem;
+}
+
+.flight-desc {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.flight-input-group {
+  display: flex;
+  gap: 1rem;
+}
+
+.flight-input {
+  flex: 1;
+  background: rgba(0,0,0,0.5);
+  border: 1px solid #333;
+  color: #fff;
+  padding: 1rem 1.5rem;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.flight-input:focus {
+  outline: none;
+  border-color: #d4af37;
+}
+
+@media (max-width: 768px) {
+  .flight-container {
+    padding: 2rem;
+  }
+  .flight-input-group {
+    flex-direction: column;
+  }
+}

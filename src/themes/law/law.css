@@ -1,0 +1,104 @@
+:root {
+  --law-primary: #0A192F; /* Deep Navy */
+  --law-secondary: #112240; /* Lighter Navy */
+  --law-accent: #C5A059; /* Gold */
+  --law-accent-hover: #D4AF68;
+  --law-text: #333333;
+  --law-text-muted: #666666;
+  --law-text-light: #F8F9FA;
+  --law-bg: #FFFFFF;
+  --law-bg-alt: #F4F7F6;
+  --law-border: #EAEAEA;
+  --law-font: 'Inter', 'Playfair Display', serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--law-font);
+  color: var(--law-text);
+  background-color: var(--law-bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+.law-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.law-section {
+  padding: 6rem 0;
+}
+
+.law-section-alt {
+  background-color: var(--law-bg-alt);
+}
+
+.law-section-dark {
+  background-color: var(--law-primary);
+  color: var(--law-text-light);
+}
+
+.law-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: inherit;
+}
+
+.law-subtitle {
+  font-size: 1.1rem;
+  color: var(--law-accent);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.law-btn {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.law-btn-primary {
+  background-color: var(--law-accent);
+  color: var(--law-primary);
+}
+
+.law-btn-primary:hover {
+  background-color: var(--law-accent-hover);
+}
+
+.law-btn-outline {
+  background-color: transparent;
+  border: 2px solid var(--law-accent);
+  color: var(--law-accent);
+}
+
+.law-btn-outline:hover {
+  background-color: var(--law-accent);
+  color: var(--law-primary);
+}
+
+/* Utilities */
+.text-center { text-align: center; }
+.mt-2 { margin-top: 2rem; }
+.mb-2 { margin-bottom: 2rem; }
+.grid { display: grid; gap: 2rem; }
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+@media (max-width: 768px) {
+  .grid-2, .grid-3, .grid-4 {
+    grid-template-columns: 1fr;
+  }
+}

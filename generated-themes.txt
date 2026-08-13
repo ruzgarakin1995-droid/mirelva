@@ -1,0 +1,387 @@
+
+  const DEFAULT_THEMES = [
+    {
+        "id": "1",
+        "name": "Aesthetic Tema",
+        "category": "Aesthetic",
+        "isPremium": true,
+        "previewUrl": "/test-aesthetic",
+        "config": "{\"tier\":1}"
+    },
+    {
+        "id": "2",
+        "name": "Agency Tema",
+        "category": "Agency",
+        "isPremium": true,
+        "previewUrl": "/test-agency",
+        "config": "{\"tier\":1}"
+    },
+    {
+        "id": "3",
+        "name": "Architecture Tema",
+        "category": "Architecture",
+        "isPremium": true,
+        "previewUrl": "/test-architecture",
+        "config": "{\"tier\":1}"
+    },
+    {
+        "id": "4",
+        "name": "Architecture V2 Tema",
+        "category": "Architecture",
+        "isPremium": false,
+        "previewUrl": "/test-architecture-v2",
+        "config": "{\"tier\":2}"
+    },
+    {
+        "id": "5",
+        "name": "Architecture V3 Tema",
+        "category": "Architecture",
+        "isPremium": true,
+        "previewUrl": "/test-architecture-v3",
+        "config": "{\"tier\":3}"
+    },
+    {
+        "id": "6",
+        "name": "Auto Tema",
+        "category": "Auto",
+        "isPremium": true,
+        "previewUrl": "/test-auto",
+        "config": "{\"tier\":1}"
+    },
+    {
+        "id": "7",
+        "name": "Auto V2 Tema",
+        "category": "Auto",
+        "isPremium": false,
+        "previewUrl": "/test-auto-v2",
+        "config": "{\"tier\":2}"
+    },
+    {
+        "id": "8",
+        "name": "Autoservice V2 Tema",
+        "category": "Autoservice",
+        "isPremium": false,
+        "previewUrl": "/test-autoservice-v2",
+        "config": "{\"tier\":2}"
+    },
+    {
+        "id": "9",
+        "name": "Barber Tema",
+        "category": "Barber",
+        "isPremium": true,
+        "previewUrl": "/test-barber",
+        "config": "{\"tier\":1}"
+    },
+    {
+        "id": "10",
+        "name": "Beauty Tema",
+        "category": "Beauty",
+        "isPremium": true,
+        "previewUrl": "/test-beauty",
+        "config": "{\"tier\":1}"
+    },
+    {
+        "id": "11",
+        "name": "Cafe V2 Tema",
+        "category": "Cafe",
+        "isPremium": false,
+        "previewUrl": "/test-cafe-v2",
+        "config": "{\"tier\":2}"
+    },
+    {
+        "id": "12",
+        "name": "Coffee V2 Tema",
+        "category": "Coffee",
+        "isPremium": false,
+        "previewUrl": "/test-coffee-v2",
+        "config": "{\"tier\":2}"
+    },
+    {
+        "id": "13",
+        "name": "Construction Tema",
+        "category": "Construction",
+        "isPremium": true,
+        "previewUrl": "/test-construction",
+        "config": "{\"tier\":1}"
+    },
+    {
+        "id": "14",
+        "name": "Dentist Tema",
+        "category": "Dentist",
+        "isPremium": true,
+        "previewUrl": "/test-dentist",
+        "config": "{\"tier\":1}"
+    },
+    {
+        "id": "15",
+        "name": "Doctor Tema",
+        "category": "Doctor",
+        "isPremium": true,
+        "previewUrl": "/test-doctor",
+        "config": "{\"tier\":1}"
+    },
+    {
+        "id": "16",
+        "name": "Doctor V2 Tema",
+        "category": "Doctor",
+        "isPremium": false,
+        "previewUrl": "/test-doctor-v2",
+        "config": "{\"tier\":2}"
+    },
+    {
+        "id": "17",
+        "name": "Ecommerce Tema",
+        "category": "E-commerce",
+        "isPremium": true,
+        "previewUrl": "/test-ecommerce",
+        "config": "{\"tier\":1}"
+    },
+    {
+        "id": "18",
+        "name": "Ecommerce V2 Tema",
+        "category": "E-commerce",
+        "isPremium": false,
+        "previewUrl": "/test-ecommerce-v2",
+        "config": "{\"tier\":2}"
+    },
+    {
+        "id": "19",
+        "name": "Ecommerce V3 Tema",
+        "category": "E-commerce",
+        "isPremium": true,
+        "previewUrl": "/test-ecommerce-v3",
+        "config": "{\"tier\":3}"
+    },
+    {
+        "id": "20",
+        "name": "Ecommerce V4 Tema",
+        "category": "E-commerce",
+        "isPremium": true,
+        "previewUrl": "/test-ecommerce-v4",
+        "config": "{\"tier\":3}"
+    },
+    {
+        "id": "21",
+        "name": "Education Tema",
+        "category": "Education",
+        "isPremium": true,
+        "previewUrl": "/test-education",
+        "config": "{\"tier\":1}"
+    },
+    {
+        "id": "22",
+        "name": "Events Tema",
+        "category": "Events",
+        "isPremium": true,
+        "previewUrl": "/test-events",
+        "config": "{\"tier\":1}"
+    },
+    {
+        "id": "23",
+        "name": "Finance Tema",
+        "category": "Finance",
+        "isPremium": true,
+        "previewUrl": "/test-finance",
+        "config": "{\"tier\":1}"
+    },
+    {
+        "id": "24",
+        "name": "Fitness Tema",
+        "category": "Fitness",
+        "isPremium": true,
+        "previewUrl": "/test-fitness",
+        "config": "{\"tier\":1}"
+    },
+    {
+        "id": "25",
+        "name": "Hair Salon Tema",
+        "category": "Hair Salon",
+        "isPremium": true,
+        "previewUrl": "/test-hair-salon",
+        "config": "{\"tier\":1}"
+    },
+    {
+        "id": "26",
+        "name": "Hamburger V2 Tema",
+        "category": "Hamburger",
+        "isPremium": false,
+        "previewUrl": "/test-hamburger-v2",
+        "config": "{\"tier\":2}"
+    },
+    {
+        "id": "27",
+        "name": "Hotel Tema",
+        "category": "Hotel",
+        "isPremium": true,
+        "previewUrl": "/test-hotel",
+        "config": "{\"tier\":1}"
+    },
+    {
+        "id": "28",
+        "name": "Hotel V3 Tema",
+        "category": "Hotel",
+        "isPremium": true,
+        "previewUrl": "/test-hotel-v3",
+        "config": "{\"tier\":3}"
+    },
+    {
+        "id": "29",
+        "name": "Jewelry Tema",
+        "category": "Jewelry",
+        "isPremium": true,
+        "previewUrl": "/test-jewelry",
+        "config": "{\"tier\":1}"
+    },
+    {
+        "id": "30",
+        "name": "Jewelry V3 Tema",
+        "category": "Jewelry",
+        "isPremium": true,
+        "previewUrl": "/test-jewelry-v3",
+        "config": "{\"tier\":3}"
+    },
+    {
+        "id": "31",
+        "name": "Law Tema",
+        "category": "Law",
+        "isPremium": true,
+        "previewUrl": "/test-law",
+        "config": "{\"tier\":1}"
+    },
+    {
+        "id": "32",
+        "name": "Law V2 Tema",
+        "category": "Law",
+        "isPremium": false,
+        "previewUrl": "/test-law-v2",
+        "config": "{\"tier\":2}"
+    },
+    {
+        "id": "33",
+        "name": "Law V3 Tema",
+        "category": "Law",
+        "isPremium": true,
+        "previewUrl": "/test-law-v3",
+        "config": "{\"tier\":3}"
+    },
+    {
+        "id": "34",
+        "name": "Logistics Tema",
+        "category": "Logistics",
+        "isPremium": true,
+        "previewUrl": "/test-logistics",
+        "config": "{\"tier\":1}"
+    },
+    {
+        "id": "35",
+        "name": "Pizza V2 Tema",
+        "category": "Pizza",
+        "isPremium": false,
+        "previewUrl": "/test-pizza-v2",
+        "config": "{\"tier\":2}"
+    },
+    {
+        "id": "36",
+        "name": "Real Estate Tema",
+        "category": "Real Estate",
+        "isPremium": true,
+        "previewUrl": "/test-real-estate",
+        "config": "{\"tier\":1}"
+    },
+    {
+        "id": "37",
+        "name": "Realestate Tema",
+        "category": "Real Estate",
+        "isPremium": true,
+        "previewUrl": "/test-realestate",
+        "config": "{\"tier\":1}"
+    },
+    {
+        "id": "38",
+        "name": "Rentacar Tema",
+        "category": "RENT_A_CAR",
+        "isPremium": true,
+        "previewUrl": "/test-rentacar",
+        "config": "{\"tier\":1}"
+    },
+    {
+        "id": "39",
+        "name": "Rentacar V2 Tema",
+        "category": "RENT_A_CAR",
+        "isPremium": false,
+        "previewUrl": "/test-rentacar-v2",
+        "config": "{\"tier\":2}"
+    },
+    {
+        "id": "40",
+        "name": "Restaurant Tema",
+        "category": "Restaurant",
+        "isPremium": true,
+        "previewUrl": "/test-restaurant",
+        "config": "{\"tier\":1}"
+    },
+    {
+        "id": "41",
+        "name": "Restaurant V3 Tema",
+        "category": "Restaurant",
+        "isPremium": true,
+        "previewUrl": "/test-restaurant-v3",
+        "config": "{\"tier\":3}"
+    },
+    {
+        "id": "42",
+        "name": "Restaurant V4 Tema",
+        "category": "Restaurant",
+        "isPremium": true,
+        "previewUrl": "/test-restaurant-v4",
+        "config": "{\"tier\":3}"
+    },
+    {
+        "id": "43",
+        "name": "Salon Tema",
+        "category": "Salon",
+        "isPremium": true,
+        "previewUrl": "/test-salon",
+        "config": "{\"tier\":1}"
+    },
+    {
+        "id": "44",
+        "name": "Software Tema",
+        "category": "Software",
+        "isPremium": true,
+        "previewUrl": "/test-software",
+        "config": "{\"tier\":1}"
+    },
+    {
+        "id": "45",
+        "name": "Tuning V2 Tema",
+        "category": "Tuning",
+        "isPremium": false,
+        "previewUrl": "/test-tuning-v2",
+        "config": "{\"tier\":2}"
+    },
+    {
+        "id": "46",
+        "name": "Viptransfer V2 Tema",
+        "category": "Viptransfer",
+        "isPremium": false,
+        "previewUrl": "/test-viptransfer-v2",
+        "config": "{\"tier\":2}"
+    },
+    {
+        "id": "47",
+        "name": "Yacht Tema",
+        "category": "Yacht",
+        "isPremium": true,
+        "previewUrl": "/test-yacht",
+        "config": "{\"tier\":1}"
+    },
+    {
+        "id": "48",
+        "name": "Yacht V2 Tema",
+        "category": "Yacht",
+        "isPremium": false,
+        "previewUrl": "/test-yacht-v2",
+        "config": "{\"tier\":2}"
+    }
+];
