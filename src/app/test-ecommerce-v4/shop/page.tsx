@@ -8,7 +8,9 @@ import { SupplementProductCard } from '@/components/ecommerce/supplement/Supplem
 import { Filter, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-export default function SupplementShopPage() {
+import { Suspense } from 'react';
+
+function SupplementShopContent() {
   const searchParams = useSearchParams();
   const initialCategory = searchParams.get('category');
 
@@ -187,5 +189,13 @@ export default function SupplementShopPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function SupplementShopPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-[#09090b] flex items-center justify-center text-white">Yükleniyor...</div>}>
+      <SupplementShopContent />
+    </Suspense>
   );
 }
