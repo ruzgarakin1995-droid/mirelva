@@ -19,6 +19,16 @@ export function AestheticBookingModal({ isOpen, onClose }: AestheticBookingModal
     message: ''
   });
 
+  const [isServiceOpen, setIsServiceOpen] = useState(false);
+
+  const servicesList = [
+    { value: "Botoks & Dolgu", label: "Botoks & Dolgu Uygulamaları" },
+    { value: "Sıvı Yüz Germe", label: "Sıvı Yüz Germe" },
+    { value: "Lazer İşlemler", label: "Lazer & Cihazlı İşlemler" },
+    { value: "Medikal Cilt Bakımı", label: "Medikal Cilt Bakımı" },
+    { value: "Diğer", label: "Diğer / Doktor Görüşü" }
+  ];
+
   // Simulated Time Slots (9am to 6pm)
   const allTimeSlots = [
     '09:00', '10:00', '11:00', '11:30', 
@@ -118,15 +128,43 @@ export function AestheticBookingModal({ isOpen, onClose }: AestheticBookingModal
                       </div>
 
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
+                        <div className="relative">
                           <label className="block text-[10px] font-sans font-medium tracking-[0.1em] uppercase text-[#1C1C1C]/50 mb-4">İlgilendiğiniz Tedavi</label>
-                          <select value={formData.service} onChange={(e) => setFormData({...formData, service: e.target.value})} className="w-full bg-transparent border-b border-[#1C1C1C]/20 py-2 text-[#1C1C1C] focus:outline-none focus:border-[#C4A79A] transition-colors appearance-none cursor-pointer">
-                            <option value="">Seçiniz...</option>
-                            <option value="Botoks & Dolgu">Botoks & Dolgu Uygulamaları</option>
-                            <option value="Lazer İşlemler">Lazer & Cihazlı İşlemler</option>
-                            <option value="Medikal Cilt Bakımı">Medikal Cilt Bakımı</option>
-                            <option value="Diğer">Diğer / Doktor Görüşü</option>
-                          </select>
+                          <div 
+                            className="w-full bg-transparent border-b border-[#1C1C1C]/20 py-2 text-[#1C1C1C] flex justify-between items-center cursor-pointer hover:border-[#C4A79A] transition-colors"
+                            onClick={() => setIsServiceOpen(!isServiceOpen)}
+                          >
+                            <span className={formData.service ? 'text-[#1C1C1C]' : 'text-[#1C1C1C]/50'}>
+                              {formData.service ? servicesList.find(s => s.value === formData.service)?.label || formData.service : 'Seçiniz...'}
+                            </span>
+                            <svg className={`w-4 h-4 transition-transform duration-300 ${isServiceOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 9l-7 7-7-7" />
+                            </svg>
+                          </div>
+                          
+                          <AnimatePresence>
+                            {isServiceOpen && (
+                              <motion.div 
+                                initial={{ opacity: 0, y: -10 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: -10 }}
+                                className="absolute top-[calc(100%+8px)] left-0 w-full bg-[#FDFCF9] shadow-[0_10px_40px_-10px_rgba(0,0,0,0.15)] border border-[#1C1C1C]/5 rounded-md z-[60] py-2 overflow-hidden"
+                              >
+                                {servicesList.map((service) => (
+                                  <div 
+                                    key={service.value}
+                                    onClick={() => {
+                                      setFormData({...formData, service: service.value});
+                                      setIsServiceOpen(false);
+                                    }}
+                                    className="px-5 py-3 text-sm text-[#1C1C1C]/80 hover:bg-[#C4A79A]/10 hover:text-[#C4A79A] cursor-pointer transition-colors"
+                                  >
+                                    {service.label}
+                                  </div>
+                                ))}
+                              </motion.div>
+                            )}
+                          </AnimatePresence>
                         </div>
                         <div>
                           <label className="block text-[10px] font-sans font-medium tracking-[0.1em] uppercase text-[#1C1C1C]/50 mb-4">Randevu Tarihi</label>
